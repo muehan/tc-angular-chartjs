@@ -134,7 +134,9 @@
               if ( exposeChart ) {
                 $scope.chart = chartObj;
               }
-              chartObj.resize();
+              if (chartObj.options.responsive){
+				  chartObj.resize();
+			  }
             }
         }, true);
       }
