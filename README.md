@@ -65,12 +65,26 @@ by assigning $scope variables to `chart-options` and `chart-data` attributes on 
 <canvas tc-chartjs-doughnut chart-data="myData" chart-options="myOptions" chart-click="onChartClick(event)" width="350" height="350"></canvas>
 ```
 ```javascript
-$scope.myData = [
-  { value : 50, color : "#F7464A" },
-  { value : 90, color : "#E2EAE9" },
-  { value : 75, color : "#D4CCC5" },
-  { value : 30, color : "#949FB1"}
-];
+$scope.myData = {
+  datasets: [{
+	label: "My First dataset",
+	data: [
+	  300,
+	  50,
+	  100
+	],
+	backgroundColor: [
+	  "#F7464A",
+	  "#46BFBD",
+	  "#FDB45C"
+	]
+  }],
+  labels: [
+	"Red",
+	"Green",
+	"Yellow"
+  ]
+};
 
 $scope.myOptions =  {
   // Chart.js options can go here.
